@@ -84,13 +84,6 @@
             flavor = "balanced";
         };
 
-        encoder_mouse_scroll: encoder_mouse_scroll {
-            compatible = "zmk,behavior-sensor-rotate-var";
-            label = "ENCODER_MOUSE_SCROLL";
-            #sensor-binding-cells = <2>;
-            bindings = <&msc>, <&msc>;
-        };
-
         encoder_kp: encoder_kp {
             compatible = "zmk,behavior-sensor-rotate-var";
             label = "ENCODER_KP";
@@ -108,6 +101,13 @@
             quick-tap-ms = <150>;
             flavor = "balanced";
         };
+
+        encoder_mouse_scroll: encoder_mouse_scroll {
+            compatible = "zmk,behavior-sensor-rotate";
+            label = "ENCODER_MOUSE_SCROLL";
+            #sensor-binding-cells = <0>;
+            bindings = <&msc SCRL_DOWN>, <&msc SCRL_UP>;
+        };
     };
 
     keymap {
@@ -121,7 +121,7 @@
 &caps_word        &kp SQT  &kp GRAVE  &tap_repeat LEFT_CONTROL BACKSPACE  &mt LEFT_COMMAND DELETE  &lt 4 ESCAPE      &tap_repeat LEFT_ALT ENTER  &mt RIGHT_COMMAND SPACE                                                  &mo 6
             >;
 
-            sensor-bindings = <&encoder_mouse_scroll MOVE_Y(-10) MOVE_Y(10)>;
+            sensor-bindings = <&encoder_mouse_scroll>;
         };
 
         FUNCTION {
