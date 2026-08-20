@@ -52,6 +52,11 @@
             bindings = <&kp SQT>;
             key-positions = <20 19>;
         };
+
+        shift_ctrl {
+            bindings = <&kp LS(LEFT_CONTROL)>;
+            key-positions = <10 22>;
+        };
     };
 
     macros {
