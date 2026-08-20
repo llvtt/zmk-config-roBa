@@ -73,6 +73,31 @@
             #binding-cells = <2>;
             tapping-term-ms = <200>;
         };
+
+        tap_repeat: tap_repeat {
+            compatible = "zmk,behavior-hold-tap";
+            label = "TAP_REPEAT";
+            bindings = <&kp>, <&kp>;
+
+            #binding-cells = <2>;
+            tapping-term-ms = <150>;
+            quick-tap-ms = <150>;
+            flavor = "balanced";
+        };
+
+        encoder_mouse_scroll: encoder_mouse_scroll {
+            compatible = "zmk,behavior-sensor-rotate-var";
+            label = "ENCODER_MOUSE_SCROLL";
+            #sensor-binding-cells = <2>;
+            bindings = <&msc>, <&msc>;
+        };
+
+        encoder_kp: encoder_kp {
+            compatible = "zmk,behavior-sensor-rotate-var";
+            label = "ENCODER_KP";
+            #sensor-binding-cells = <2>;
+            bindings = <&kp>, <&kp>;
+        };
     };
 
     keymap {
@@ -80,13 +105,13 @@
 
         default_layer {
             bindings = <
-&kp Q             &kp W         &kp E         &kp R                   &kp T                                             &kp Y        &kp U  &lt 5 I    &kp O    &kp P
-&lt 3 A           &kp S         &kp D         &lt 2 F                 &kp G        &kp LS(LG(S))         &kp MINUS      &kp H        &kp J  &kp K      &kp L    &kp SQT
-&mt LEFT_SHIFT Z  &kp X         &kp C         &kp V                   &kp B        &kp COLON             &kp SEMICOLON  &kp N        &kp M  &kp COMMA  &kp DOT  &kp SLASH
-&kp LCTRL         &kp LEFT_WIN  &kp LEFT_ALT  &lt_to_layer_0 4 ENTER  &lt 2 SPACE  &kp LEFT_COMMAND      &kp BACKSPACE  &lt 1 ENTER                             &kp DEL
+&kp Q             &kp W    &kp E      &kp R                               &kp T                                                                  &kp Y                &kp U  &kp I      &kp O    &kp P
+&lt 3 A           &kp S    &kp D      &lt 2 F                             &kp G                    &kp C_MUTE        &kp RCTRL                   &mt RIGHT_COMMAND H  &kp J  &kp K      &kp L    &lt 2 SEMICOLON
+&mt LEFT_SHIFT Z  &kp X    &kp C      &kp V                               &kp B                    &mo 5             &lt 5 TAB                   &kp N                &kp M  &kp COMMA  &kp DOT  &mt RIGHT_SHIFT SLASH
+&caps_word        &kp SQT  &kp GRAVE  &tap_repeat LEFT_CONTROL BACKSPACE  &mt LEFT_COMMAND DELETE  &lt 4 ESCAPE      &tap_repeat LEFT_ALT ENTER  &kp SPACE                                       &mo 6
             >;
 
-            sensor-bindings = <&inc_dec_kp PG_UP PAGE_DOWN>;
+            sensor-bindings = <&encoder_mouse_scroll SCRL_UP SCRL_DOWN>;
         };
 
         FUNCTION {
@@ -98,13 +123,15 @@
             >;
         };
 
-        NUM {
+        SYMBOLS {
             bindings = <
-&kp MINUS                   &kp KP_NUMBER_7  &kp KP_NUMBER_8  &kp KP_NUMBER_9  &kp PLUS                                                   &kp CARET         &kp AMPERSAND      &kp TILDE       &kp LEFT_PARENTHESIS  &kp RIGHT_PARENTHESIS
-&kp SLASH                   &kp KP_NUMBER_4  &kp KP_NUMBER_5  &kp KP_NUMBER_6  &kp ASTERISK  &kp LC(LA(KP_NUMBER_0))      &kp UNDERSCORE  &kp EXCLAMATION   &kp AT_SIGN        &kp HASH        &kp DOLLAR            &kp PERCENT
-&mt LEFT_SHIFT KP_NUMBER_0  &kp KP_NUMBER_1  &kp KP_NUMBER_2  &kp KP_NUMBER_3  &kp PERIOD    &kp EQUAL                    &trans          &kp LEFT_BRACKET  &kp RIGHT_BRACKET  &kp LEFT_BRACE  &kp RIGHT_BRACE       &kp BACKSLASH
-&trans                      &trans           &trans           &trans           &trans        &trans                       &trans          &trans                                                                     &kp PIPE
+&kp TILDE  &kp AT_SIGN  &kp LEFT_BRACE    &kp RIGHT_BRACE    &kp PERCENT                              &kp AMPERSAND  &kp UNDERSCORE        &kp MINUS              &kp PIPE       &kp DOUBLE_QUOTES
+&kp EQUAL  &kp PLUS     &kp LEFT_BRACKET  &kp RIGHT_BRACKET  &kp CARET    &trans      &kp UNDERSCORE  &kp DOLLAR     &kp LEFT_PARENTHESIS  &kp RIGHT_PARENTHESIS  &kp BACKSLASH  &kp SINGLE_QUOTE
+&kp GRAVE  &kp TILDE    &kp LESS_THAN     &kp GREATER_THAN   &trans       &trans      &trans          &trans         &trans                &trans                 &trans         &trans
+&trans     &trans       &trans            &trans             &trans       &trans      &trans          &trans                                                                     &trans
             >;
+
+            sensor-bindings = <&encoder_kp C_BRIGHTNESS_INC C_BRIGHTNESS_DEC>;
         };
 
         ARROW {
@@ -114,35 +141,35 @@
 &trans  &trans  &trans  &trans  &trans  &trans      &trans  &trans  &kp PAGE_UP     &trans          &kp PAGE_DOWN    &trans
 &trans  &trans  &trans  &trans  &trans  &trans      &trans  &trans                                                   &trans
             >;
-
-            sensor-bindings = <&inc_dec_kp LC(PAGE_UP) LC(PAGE_DOWN)>;
         };
 
         MOUSE {
             bindings = <
-&trans  &trans    &trans    &trans    &trans                      &trans  &trans    &trans    &trans    &trans
-&trans  &mkp MB2  &mkp MB3  &mkp MB1  &trans  &trans      &trans  &trans  &mkp MB1  &mkp MB3  &mkp MB2  &trans
-&trans  &trans    &trans    &trans    &trans  &trans      &trans  &trans  &trans    &trans    &trans    &trans
-&trans  &trans    &trans    &trans    &trans  &trans      &trans  &trans                                &trans
+&trans  &trans    &trans    &trans    &trans                      &trans  &trans  &trans  &trans  &trans
+&trans  &mkp MB2  &mkp MB3  &mkp MB1  &trans  &trans      &trans  &trans  &trans  &trans  &trans  &trans
+&trans  &trans    &trans    &trans    &trans  &trans      &trans  &trans  &trans  &trans  &trans  &trans
+&trans  &trans    &trans    &trans    &trans  &trans      &trans  &trans                          &trans
             >;
         };
 
-        SCROLL {
+        NUMBERS {
             bindings = <
-&trans  &trans  &trans  &trans  &trans                      &trans  &trans  &trans  &trans  &trans
+&kp N1  &kp N2  &kp N3  &kp N4  &kp N5                      &kp N6  &kp N7  &kp N8  &kp N9  &kp N0
 &trans  &trans  &trans  &trans  &trans  &trans      &trans  &trans  &trans  &trans  &trans  &trans
 &trans  &trans  &trans  &trans  &trans  &trans      &trans  &trans  &trans  &trans  &trans  &trans
 &trans  &trans  &trans  &trans  &trans  &trans      &trans  &trans                          &trans
             >;
         };
 
-        layer_6 {
+        KBD_CTRL {
             bindings = <
 &trans  &trans        &trans        &trans        &trans                           &bt BT_SEL 0  &bt BT_SEL 1  &bt BT_SEL 2  &bt BT_SEL 3  &bt BT_SEL 4
 &trans  &trans        &trans        &trans        &trans  &trans      &trans       &trans        &trans        &trans        &trans        &trans
 &trans  &kp NUMBER_1  &kp NUMBER_2  &kp NUMBER_3  &trans  &trans      &bootloader  &trans        &trans        &trans        &trans        &bt BT_CLR
 &trans  &trans        &trans        &trans        &trans  &trans      &trans       &trans                                                  &bt BT_CLR_ALL
             >;
+
+            sensor-bindings = <&encoder_kp C_VOLUME_UP C_VOL_DN>;
         };
     };
 };
