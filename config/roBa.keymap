@@ -30,17 +30,12 @@
 
         tab {
             bindings = <&kp TAB>;
-            key-positions = <11 12>;
+            key-positions = <11 10>;
         };
 
         shift_tab {
             bindings = <&kp LS(TAB)>;
-            key-positions = <12 13>;
-        };
-
-        muhennkann {
-            bindings = <&to_layer_0 INT_MUHENKAN>;
-            key-positions = <11 10>;
+            key-positions = <12 11>;
         };
 
         double_quotation {
@@ -50,7 +45,12 @@
 
         eq {
             bindings = <&kp EQUAL>;
-            key-positions = <24 25>;
+            key-positions = <13 12>;
+        };
+
+        single_quote {
+            bindings = <&kp SQT>;
+            key-positions = <20 19>;
         };
     };
 
