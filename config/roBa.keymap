@@ -11,7 +11,6 @@
 &trackball {
     // automouse-layer = <4>;
     // scroll-layers = <5>;
-
     // arrows {
     //     layers = <3>;
     //     bindings =
@@ -111,7 +110,7 @@
 &caps_word        &kp SQT  &kp GRAVE  &tap_repeat LEFT_CONTROL BACKSPACE  &mt LEFT_COMMAND DELETE  &lt 4 ESCAPE      &tap_repeat LEFT_ALT ENTER  &mt RIGHT_COMMAND SPACE                                         &mo 6
             >;
 
-            sensor-bindings = <&encoder_mouse_scroll SCRL_UP SCRL_DOWN>;
+            sensor-bindings = <&encoder_mouse_scroll MOVE_Y(-10) MOVE_Y(10)>;
         };
 
         FUNCTION {
@@ -131,7 +130,7 @@
 &trans     &trans       &trans            &trans             &trans       &trans      &trans          &trans                                                                     &trans
             >;
 
-            sensor-bindings = <&encoder_kp C_BRIGHTNESS_INC C_BRIGHTNESS_DEC>;
+            sensor-bindings = <&encoder_kp C_BRIGHTNESS_DEC C_BRIGHTNESS_INC>;
         };
 
         ARROW {
@@ -169,7 +168,7 @@
 &trans  &trans        &trans        &trans        &trans  &trans      &trans       &trans                                                  &bt BT_CLR_ALL
             >;
 
-            sensor-bindings = <&encoder_kp C_VOLUME_UP C_VOL_DN>;
+            sensor-bindings = <&encoder_kp C_VOLUME_DOWN C_VOLUME_UP>;
         };
     };
 };
