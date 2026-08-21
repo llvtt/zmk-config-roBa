@@ -93,6 +93,26 @@
             bindings = <&mod_layer 2 LEFT_COMMAND>;
             key-positions = <22 24>;
         };
+
+        one {
+            bindings = <&kp NUMBER_1>;
+            key-positions = <0 1>;
+        };
+
+        two {
+            bindings = <&kp NUMBER_2>;
+            key-positions = <1 2>;
+        };
+
+        three {
+            bindings = <&kp NUMBER_3>;
+            key-positions = <2 3>;
+        };
+
+        four {
+            bindings = <&kp NUMBER_4>;
+            key-positions = <3 4>;
+        };
     };
 
     macros {
