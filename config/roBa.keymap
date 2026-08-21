@@ -83,6 +83,16 @@
             bindings = <&kp RS(RIGHT_COMMAND)>;
             key-positions = <41 21>;
         };
+
+        cmd_sym_rhs {
+            bindings = <&mod_layer 2 RIGHT_COMMAND>;
+            key-positions = <33 31>;
+        };
+
+        cmd_sym_lhs {
+            bindings = <&mod_layer 2 LEFT_COMMAND>;
+            key-positions = <22 24>;
+        };
     };
 
     macros {
