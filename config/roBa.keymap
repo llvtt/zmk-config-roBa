@@ -1,5 +1,4 @@
 #include <behaviors.dtsi>
-#include <behaviors/num_word.dtsi>
 #include <dt-bindings/zmk/backlight.h>
 #include <dt-bindings/zmk/bt.h>
 #include <dt-bindings/zmk/keys.h>
@@ -93,11 +92,6 @@
         cmd_sym_lhs {
             bindings = <&mod_layer 2 LEFT_COMMAND>;
             key-positions = <22 24>;
-        };
-
-        num_word {
-            bindings = <&num_word 5>;
-            key-positions = <37 40>;
         };
     };
 
