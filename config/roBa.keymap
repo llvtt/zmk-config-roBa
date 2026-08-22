@@ -113,6 +113,16 @@
             bindings = <&kp NUMBER_4>;
             key-positions = <3 4>;
         };
+
+        dash {
+            bindings = <&kp MINUS>;
+            key-positions = <30 31>;
+        };
+
+        underscore {
+            bindings = <&kp UNDERSCORE>;
+            key-positions = <29 30>;
+        };
     };
 
     macros {
