@@ -123,6 +123,11 @@
             bindings = <&kp UNDERSCORE>;
             key-positions = <29 30>;
         };
+
+        right_ctrl {
+            bindings = <&kp RIGHT_CONTROL>;
+            key-positions = <20 18>;
+        };
     };
 
     macros {
