@@ -280,10 +280,10 @@
 
         KBD_CTRL {
             bindings = <
-&bl BL_TOG  &trans        &kp C_PREV    &kp C_NEXT    &kp C_PLAY_PAUSE                           &bt BT_SEL 0  &bt BT_SEL 1  &bt BT_SEL 2  &bt BT_SEL 3  &bt BT_SEL 4
-&trans      &trans        &trans        &trans        &trans            &trans      &trans       &trans        &trans        &trans        &trans        &trans
-&trans      &kp NUMBER_1  &kp NUMBER_2  &kp NUMBER_3  &trans            &trans      &bootloader  &trans        &trans        &trans        &trans        &bt BT_CLR
-&trans      &trans        &trans        &trans        &trans            &trans      &trans       &trans                                                  &bt BT_CLR_ALL
+&bl BL_TOG  &trans        &kp C_PREV    &kp C_NEXT    &kp C_PLAY_PAUSE                           &bt BT_SEL 0  &bt BT_SEL 1                       &bt BT_SEL 2  &bt BT_SEL 3  &bt BT_SEL 4
+&trans      &trans        &trans        &trans        &trans            &trans      &trans       &trans        &kp C_AC_DESKTOP_SHOW_ALL_WINDOWS  &trans        &trans        &trans
+&trans      &kp NUMBER_1  &kp NUMBER_2  &kp NUMBER_3  &trans            &trans      &bootloader  &trans        &trans                             &trans        &trans        &bt BT_CLR
+&trans      &trans        &trans        &trans        &trans            &trans      &trans       &trans                                                                       &bt BT_CLR_ALL
             >;
 
             sensor-bindings = <&encoder_kp C_VOLUME_DOWN C_VOLUME_UP>;
