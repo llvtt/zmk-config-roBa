@@ -242,10 +242,10 @@
 
         SYMBOLS {
             bindings = <
-&kp TILDE        &kp AT_SIGN  &kp HASH          &kp DOLLAR         &kp PERCENT                            &kp AMPERSAND  &kp UNDERSCORE        &kp ASTERISK           &kp PIPE        &kp DOUBLE_QUOTES
-&kp EXCLAMATION  &kp PLUS     &kp LEFT_BRACKET  &kp RIGHT_BRACKET  &kp CARET    &trans      &kp ASTERISK  &kp DOLLAR     &kp LEFT_PARENTHESIS  &kp RIGHT_PARENTHESIS  &kp BACKSLASH   &kp SINGLE_QUOTE
-&kp GRAVE        &kp TILDE    &kp LEFT_BRACE    &kp RIGHT_BRACE    &trans       &trans      &trans        &trans         &kp LEFT_BRACKET      &kp RIGHT_BRACKET      &kp LEFT_BRACE  &kp RIGHT_BRACE
-&trans           &trans       &trans            &trans             &trans       &trans      &trans        &trans                                                                      &trans
+&kp TILDE        &kp AT_SIGN  &kp HASH          &kp DOLLAR         &kp PERCENT                         &kp AMPERSAND  &kp UNDERSCORE        &kp ASTERISK           &kp PIPE        &kp DOUBLE_QUOTES
+&kp EXCLAMATION  &kp PLUS     &kp LEFT_BRACKET  &kp RIGHT_BRACKET  &kp CARET    &trans      &kp CARET  &kp DOLLAR     &kp LEFT_PARENTHESIS  &kp RIGHT_PARENTHESIS  &kp BACKSLASH   &kp SINGLE_QUOTE
+&kp GRAVE        &kp TILDE    &kp LEFT_BRACE    &kp RIGHT_BRACE    &trans       &trans      &trans     &trans         &kp LEFT_BRACKET      &kp RIGHT_BRACKET      &kp LEFT_BRACE  &kp RIGHT_BRACE
+&trans           &trans       &trans            &trans             &trans       &trans      &trans     &trans                                                                      &trans
             >;
 
             sensor-bindings = <&encoder_kp C_BRIGHTNESS_DEC C_BRIGHTNESS_INC>;
