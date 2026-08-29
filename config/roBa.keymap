@@ -218,7 +218,7 @@
 
         encoder_mouse_scroll_horiz: encoder_mouse_scroll_horiz {
             compatible = "zmk,behavior-sensor-rotate";
-            label = "ENCODER_MOUSE_SCROLL";
+            label = "ENCODER_MOUSE_SCROLL_HORIZ";
             #sensor-binding-cells = <0>;
             bindings = <&msc MOVE_X(-80)>, <&msc MOVE_X(80)>;
 
