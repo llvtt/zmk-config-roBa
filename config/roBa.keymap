@@ -94,26 +94,6 @@
             key-positions = <22 24>;
         };
 
-        one {
-            bindings = <&kp NUMBER_1>;
-            key-positions = <0 1>;
-        };
-
-        two {
-            bindings = <&kp NUMBER_2>;
-            key-positions = <1 2>;
-        };
-
-        three {
-            bindings = <&kp NUMBER_3>;
-            key-positions = <2 3>;
-        };
-
-        four {
-            bindings = <&kp NUMBER_4>;
-            key-positions = <3 4>;
-        };
-
         dash {
             bindings = <&kp MINUS>;
             key-positions = <30 31>;
@@ -127,6 +107,21 @@
         right_ctrl {
             bindings = <&kp RIGHT_CONTROL>;
             key-positions = <20 18>;
+        };
+
+        zero {
+            bindings = <&kp N0>;
+            key-positions = <9 8>;
+        };
+
+        dollar {
+            bindings = <&kp DOLLAR>;
+            key-positions = <2 3>;
+        };
+
+        caret {
+            bindings = <&kp CARET>;
+            key-positions = <6 7>;
         };
     };
 
@@ -267,6 +262,8 @@
 &trans  &trans  &trans  &trans  &trans  &trans      &trans  &trans  &kp PAGE_UP     &trans          &kp PAGE_DOWN    &trans
 &trans  &trans  &trans  &trans  &trans  &trans      &trans  &trans                                                   &trans
             >;
+
+            sensor-bindings = <&encoder_mouse_scroll_horiz>;
         };
 
         MOUSE {
