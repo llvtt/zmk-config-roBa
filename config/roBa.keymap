@@ -117,6 +117,7 @@
         dollar {
             bindings = <&kp DOLLAR>;
             key-positions = <2 3>;
+            require-prior-idle-ms = <100>;
         };
 
         caret {
